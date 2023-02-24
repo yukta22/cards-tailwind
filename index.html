@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    
+    <style>
+      
+    </style>
+    
+    <script src="https://cdn.tailwindcss.com/3.2.4"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          fontFamily: {
+            sans: ["Roboto", "sans-serif"],
+            body: ["Roboto", "sans-serif"],
+            mono: ["ui-monospace", "monospace"],
+          },
+        },
+      };
+    </script>
+  
+  </head>
+  <body >
+
+    <div class="flex flex-col md:flex-col lg:flex-row">
+      <nav class="flex-col  bg-slate-700	bg-neutral-900 text-red-800 shadow-lg h-auto lg:h-screen w-full lg:w-80 "  data-te-navbar-ref>
+        <div class="flex md:flex-row lg:flex-col md:w-full  pt-5 flex-wrap items-center justify-between px-6">
+        
+            <button 
+            class="block border-0 bg-transparent pt-2 pb-5 mb-2 px-2.5 text-neutral-500 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
+            type="button"
+            data-te-collapse-init
+            data-te-target="#navbarSupportedContent1"
+            aria-controls="navbarSupportedContent1"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="[&>svg]:w-7">
+              <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="h-7 w-7">
+                    <path
+                      fill-rule="evenodd"
+                      d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </span>
+              </button>
+              
+              
+              <div
+                class="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto sm:height-10"
+                id="navbarSupportedContent1"
+                data-te-collapse-item>
+                
+              <!-- Left links -->
+              <ul
+                class="list-style-none mr-auto flex-row pl-0 pt-5 lg:flex-row text-neutral-50	 "
+                data-te-navbar-nav-ref>
+                <li class="lg:pr-2" data-te-nav-item-ref>
+                  <a
+                  class="text-neutral-50 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-20 [&.active]:text-black/90 dark:[&.active]:text-orange-900	text-xl"
+                  href="#home"
+                  onclick="db()"
+                  data-te-collapse-init
+                  data-te-target="#home"
+                  aria-controls="home"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                    data-te-nav-link-ref
+                    >Dashboard</a
+                  >
+                </li>
+                <li class="lg:pr-2 pt-3" data-te-nav-item-ref>
+                  <a
+                  class="text-neutral-50 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-20 [&.active]:text-black/90 dark:[&.active]:text-orange-900 text-xl	" 
+                  href="#home"
+                  onclick="db()"
+                  data-te-collapse-init
+                  data-te-target="#home"
+                  aria-controls="home"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                    data-te-nav-link-ref
+                  data-te-nav-link-ref
+                    >Home</a
+                  >
+                </li>
+                <li class="lg:pr-2 pt-3 pb-7" data-te-nav-item-ref>
+                  <a
+                    class="text-neutral-50 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-20 [&.active]:text-black/90 dark:[&.active]:text-orange-900	text-xl"
+                    
+                    data-te-collapse-init
+                    onclick="home()"
+                    data-te-target="#login"
+                    aria-controls="login"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    >Login</a
+                  >
+                </li>
+              </ul>
+            <!-- Left links -->
+            
+          </div>
+
+        </div>
+      </nav>
+      </nav>
+
+      <div id="login" class="hidden md:mx-auto md:my-3 lg:mx-auto lg:mt-10">
+        <div
+          class="block max-w-md rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700">
+          <form>
+            <h1 class="text-center py-5">Login Form</h1>
+            <div class="relative mb-6" data-te-input-wrapper-init>
+              
+              <input
+                type="text"
+                class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                id="exampleInput7"
+                placeholder="Name" />
+              <label
+                for="exampleInput7"
+                class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200"
+                >Username
+              </label>
+            </div>
+            <div class="relative mb-6" data-te-input-wrapper-init>
+              <input
+                type="email"
+                class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                id="exampleInput8"
+                placeholder="Email address" />
+              <label
+                for="exampleInput8"
+                class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200"
+                >Email address
+              </label>
+            </div>
+            
+            <div class="relative mb-6" data-te-input-wrapper-init>
+              <input
+                type="password"
+                class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                id="exampleInput8"
+                placeholder="Password" />
+              <label
+                for="exampleInput8"
+                class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200"
+                >Password
+              </label>
+            </div>
+            <div
+              type="submit"
+              class="w-full px-32 rounded bg-cyan-900	 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg" 
+              onclick="TestsFunction()"
+              data-te-ripple-init
+              data-te-ripple-color="light"
+              data-te-collapse-init
+              data-te-target="#product"
+              aria-controls="product"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              >
+              Log In
+            </div>
+          </form>
+        </div>
+      </div>
+    
+      <div class=" w-full h-screen bg-emerald-900	 img" id="home">
+        <h1 class="text-6xl font-extrabold	text-white	text-center	pt-72">Welcome!</strong></h1>
+        <p class="text-3xl font-bold antialiased text-white text-center	mt-5">LogIn to see Product List</p>
+      </div>
+
+      
+
+      <div class="container" id="product">
+    <div  class="hidden pt-10 ml-10 lg:ml-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16" >
+      
+
+      <div
+        class="block max-w-sm rounded-lg bg-white shadow-lg dark:bg-neutral-700">
+        <a href="#!" data-te-ripple-init data-te-ripple-color="light">
+          <img
+            class="rounded-t-lg h-64 w-full"
+            src="https://images.unsplash.com/photo-1536846670933-ce6eef8dfe89?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHNtYXJ0cGhvbmV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+            alt="..." />
+        </a>
+        <div class="p-6">
+          <h5
+            class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+            Smart Phone 
+          </h5>
+          <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+            Price: <strong>$299</strong>
+          </p>
+          <button
+            type="button"
+            class="inline-block rounded bg-cyan-900 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
+            data-te-ripple-init
+            data-te-ripple-color="light">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      
+
+      <div
+        class="block max-w-sm rounded-lg bg-white shadow-lg dark:bg-neutral-700">
+        <a href="#!" data-te-ripple-init data-te-ripple-color="light">
+          <img
+            class="rounded-t-lg h-64 w-full"
+            src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8c21hcnQlMjB3YXRjaHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+            alt="..." />
+        </a>
+        <div class="p-6">
+          <h5
+            class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+            Smart Watch
+          </h5>
+          <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+            Price: <strong>$129</strong>
+          </p>
+          <button
+            type="button"
+            class="inline-block rounded bg-cyan-900 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
+            data-te-ripple-init
+            data-te-ripple-color="light">
+            Add to cart
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="block max-w-sm rounded-lg bg-white shadow-lg dark:bg-neutral-700">
+        <a href="#!" data-te-ripple-init data-te-ripple-color="light">
+          <img
+            class="rounded-t-lg h-64 w-full"
+            src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGxhcHRvcHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+            alt="..." />
+        </a>
+        <div class="p-6">
+          <h5
+            class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+            Laptop
+          </h5>
+          <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+            Price: <strong>$229</strong>
+          </p>
+          <button
+            type="button"
+            class="inline-block rounded bg-cyan-900 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
+            data-te-ripple-init
+            data-te-ripple-color="light">
+            Add to cart
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="block max-w-sm rounded-lg bg-white shadow-lg dark:bg-neutral-700">
+        <a href="#!" data-te-ripple-init data-te-ripple-color="light">
+          <img
+            class="rounded-t-lg h-64 w-full"
+            src="https://images.unsplash.com/photo-1574920162043-b872873f19c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YWlyJTIwcG9kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+            alt="" />
+        </a>
+        <div class="p-6">
+          <h5
+            class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+            Airpod
+          </h5>
+          <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+            Price: <strong>$129</strong>
+          </p>
+          <button
+            type="button"
+            class="inline-block rounded bg-cyan-900 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
+            data-te-ripple-init
+            data-te-ripple-color="light">
+            Add to cart
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="block max-w-sm rounded-lg bg-white shadow-lg dark:bg-neutral-700">
+        <a href="#!" data-te-ripple-init data-te-ripple-color="light">
+          <img
+            class="rounded-t-lg h-64 w-full"
+            src="https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8a2V5Ym9hcmR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+            alt="" />
+        </a>
+        <div class="p-6">
+          <h5
+            class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+            Keyboard
+          </h5>
+          <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+            Price: <strong>$109</strong>
+          </p>
+          <button
+            type="button"
+            class="inline-block rounded bg-cyan-900 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
+            data-te-ripple-init
+            data-te-ripple-color="light">
+            Add to cart
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="block max-w-sm rounded-lg bg-white shadow-lg dark:bg-neutral-700">
+        <a href="#!" data-te-ripple-init data-te-ripple-color="light">
+          <img
+            class="rounded-t-lg h-64 w-full"
+            src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8aXBhZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+            alt="..." />
+        </a>
+        <div class="p-6">
+          <h5
+            class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+            iPad
+          </h5>
+          <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+            Price: <strong>$210</strong>
+          </p>
+          <button
+            type="button"
+            class="inline-block rounded bg-cyan-900 px-6 pt-2.5 pb-2 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
+            data-te-ripple-init
+            data-te-ripple-color="light">
+            Add to cart
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+
+    </div>
+
+
+    
+    
+
+  </div>    
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+    <script>
+      function TestsFunction() {
+          let log = document.getElementById("login");
+          log.style.display = "none";  
+          let cart = document.getElementById("product");
+          cart.style.display ="block";
+      }
+
+      function home() {
+          let home = document.getElementById("home");
+          home.style.display = "none";  
+          let log = document.getElementById("login");
+          log.style.display = "block";
+          let cart = document.getElementById("product");
+          cart.style.display = "none";
+      }
+
+      function db() {
+          let home = document.getElementById("home");
+          home.style.display = "block";  
+          let log = document.getElementById("login");
+          log.style.display = "none";  
+          let cart = document.getElementById("product");
+          cart.style.display = "none";
+      }
+      
+    </script>
+
+  </body>
+</html>
